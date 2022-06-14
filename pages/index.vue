@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-wrap">
 <!--    로딩 -->
   </div>
 </template>

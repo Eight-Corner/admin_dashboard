@@ -1,0 +1,10 @@
+#__nuxt {
+    height: 100vh;
+}
+
+.indigo {
+    background-color: #3f51b5;
+}
+.red {
+    background-color: #f44336;
+}
