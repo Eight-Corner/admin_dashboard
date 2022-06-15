@@ -1,3 +1,12 @@
 .el-button+.el-button, .el-checkbox.is-bordered+.el-checkbox.is-bordered {
      margin-left: 0px;
 }
+
+.el-button:focus, .el-button:hover {
+    color: #2C3A5D;
+}
+
+.el-button {
+    border-color: #7986cb;
+}
+

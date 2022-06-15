@@ -1,7 +1,11 @@
 
 /* app 높이 확장 */
-#__nuxt {
+.app-page {
     height: 100vh;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #14274AE5;
 }
 
 /* 최소 너비 355px */

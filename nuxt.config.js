@@ -1,23 +1,23 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'board_admin',
+        title: '관리자 대시보드',
         htmlAttrs: {
             lang: 'ko'
         },
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-            {hid: 'description', name: 'description', content: ''},
+            {hid: 'description', name: 'description', content: '관리자 대시보드'},
             {name: 'format-detection', content: 'telephone=no'}
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-            {rel: 'stylesheet', type: 'text/css',
-                href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css',
-            },
-
-        ]
+            { rel:"stylesheet", type:"text/css", href:'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' }
+        ],
+        script: [
+        //    {src : ''}
+        ],
     },
     server: {
         port: 8080,
@@ -29,6 +29,7 @@ export default {
         '~assets/css/util.css',
         '~assets/css/common.css',
         '~assets/css/elcustom.css',
+        '~assets/font-awesome/css/font-awesome.css',
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

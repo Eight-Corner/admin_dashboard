@@ -1,5 +1,5 @@
 <template>
-    <div id="auth_page">
+    <div id="auth_page" class="app-page">
 
         <div id="logo">ADMIN</div>
 
@@ -7,10 +7,10 @@
             <div class="content-wrap center-block p-y-md text-center">
                 <div class="p-a-md">
                     <div class="social_btn_wrap">
-                        <el-button href="#" class="btn btn-block indigo text-white m-b-sm">
-                            <i class="ph-facebook-logo"></i>Sign in with Email
+                        <el-button href="#" class="btn btn-block indigo text-white m-b-sm facebook">
+                            <i class="fa fa-facebook pull-left"></i>Sign in with Email
                         </el-button>
-                        <el-button href="#" class="btn btn-block red text-white">
+                        <el-button href="#" class="btn btn-block red text-white google">
                             <i class="fa fa-google-plus pull-left"></i>Sign in with Google+
                         </el-button>
                     </div>
@@ -29,12 +29,6 @@ export default {
 
 <style scoped>
 
-#auth_page {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
 
 #logo {
     width: 200px;
@@ -50,6 +44,13 @@ export default {
 
 .content-wrap {
     width: 344px;
+}
+
+.google {
+    border-color: #ff4336;
+}
+.facebook {
+    border-color: #3f51b5;
 }
 
 </style>
