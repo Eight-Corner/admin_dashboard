@@ -29,6 +29,7 @@ export default {
         '~assets/css/util.css',
         '~assets/css/common.css',
         '~assets/css/elcustom.css',
+        '~assets/css/auth.css',
         '~assets/font-awesome/css/font-awesome.css',
     ],
 

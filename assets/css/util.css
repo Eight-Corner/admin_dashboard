@@ -794,3 +794,10 @@
     color: #b3e5fc;
     text-decoration: none;
 }
+.roboto {
+    font-family: Roboto, sans-serif;
+}
+.notosans {
+    font-family: "Noto Sans KR";
+}
+
