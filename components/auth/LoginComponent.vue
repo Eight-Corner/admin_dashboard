@@ -7,6 +7,9 @@
         <el-form-item label="비밀번호" prop="pass" class="flex-center">
             <el-input type="password" v-model="loginForm.pass" placeholder="숫자/영문/특수문자 포함 6 ~ 20자리" autocomplete="off"></el-input>
         </el-form-item>
+        <el-form-item v-if="groupId === 1338" label="관리자 코드" prop="code" class="flex-center">
+            <el-input type="code" v-model="loginForm.code" placeholder="관리자 코드 입력" autocomplete="off" />
+        </el-form-item>
         <el-form-item prop="keepAlive">
             <el-checkbox-group v-model="loginForm.keepAlive">
                 <el-checkbox label="현재 정보 기억하기" class="text-white" name="type"></el-checkbox>
@@ -26,6 +29,12 @@
 <script>
 export default {
     name: "LoginComponent",
+    props: {
+        groupId: {
+            type: Number,
+            default: 0,
+        },
+    },
     data() {
         let validateEmail = (rule, value, callback) => {
             if (value === '') {
@@ -60,12 +69,20 @@ export default {
                 callback();
             }
         };
+        let validateCode = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('관리자 코드를 입력해주세요.'));
+            } else {
+                callback();
+            }
+        };
 
         return {
             loginForm: {
                 email: '',
                 pass: '',
                 keepAlive: false,
+                code: '',
             },
             rules: {
                 email: [
@@ -73,6 +90,9 @@ export default {
                 ],
                 pass: [
                     { validator: validatePass, trigger: 'blur' }
+                ],
+                code: [
+                    { validator: validateCode, trigger: 'blur' }
                 ],
             }
         };

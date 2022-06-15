@@ -56,3 +56,17 @@
     color: #ffffff;
     font-family: "Noto Sans KR", sans-serif !important;
 }
+
+/* tab nav */
+.el-tabs__nav {
+    float: unset;
+}
+.el-tabs__active-bar {
+    background-color: #f44336;
+}
+.el-tabs__item {
+    color: #ffffff;
+}
+.el-tabs__item.is-active {
+    color: #f44336;
+}

@@ -7,17 +7,25 @@
 
         <div class="b-t">
             <div class="content-wrap center-block p-y-md text-center">
-                <div class="p-a-md">
-                    <div class="social_btn_wrap">
-                        <div class="text-white mb15">SNS 계정으로 간편 로그인하기 </div>
+                <div class="pt25 pb25">
+                    <div class="social_btn_wrap mb25">
+                        <div class="text-white mb15">SNS 계정으로 간편 로그인하기</div>
                         <el-button href="#" class="btn btn-block red text-white google">
                             <i class="fa fa-google-plus pull-left"></i>Sign in with Google+
                         </el-button>
                     </div>
-                    <div class="mt20 mb20 text-sm b-b b-t p-a-md">
+                    <div class="mb20 text-sm b-b b-t pt25">
                         <span class="text-white">또는</span>
+                        <el-tabs v-model="activeName" stretch="true" @tab-click="handleClick">
+                            <el-tab-pane label="일반 사용자" name="normal">
+                                <AuthLoginComponent :groupId="1" />
+                            </el-tab-pane>
+                            <el-tab-pane label="관리자" name="admin">
+                                <AuthLoginComponent :groupId="1338" />
+                            </el-tab-pane>
+
+                        </el-tabs>
                     </div>
-                    <AuthLoginComponent />
                     <NuxtLink to="/auth/forgot">
                         <div class="sm-text bold grey">비밀번호를 잊으셨습니까?</div>
                     </NuxtLink>
@@ -34,8 +42,20 @@
 <script>
 export default {
     name: "Auth",
+    data() {
+        return {
+            activeName: 'normal', // default Normal, type : normal || admin
+            groupId: 1, // default: 1 normal || 1338 admin
+        };
+    },
+    methods: {
+        handleClick(tab, event) {
+
+        },
+    },
 
 }
+
 </script>
 
 <style scoped>

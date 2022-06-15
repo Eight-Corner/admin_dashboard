@@ -1,20 +1,23 @@
 <template>
     <div>
-        <el-form :model="loginForm" status-icon :rules="rules" ref="loginForm" label-width="120px" class="">
+        <el-form :model="registerForm" status-icon :rules="rules" ref="registerForm" label-width="120px" class="">
             <el-form-item label="이름" prop="username" class="flex-center">
-                <el-input type="text" v-model="loginForm.username" placeholder="Steve Jobs" autocomplete="off" />
+                <el-input type="text" v-model="registerForm.username" placeholder="Steve Jobs" autocomplete="off" />
             </el-form-item>
             <el-form-item label="이메일" prop="email" class="flex-center">
-                <el-input type="email" v-model="loginForm.email" placeholder="admin@admin.com" autocomplete="off" />
+                <el-input type="email" v-model="registerForm.email" placeholder="admin@admin.com" autocomplete="off" />
             </el-form-item>
             <el-form-item label="비밀번호" prop="pass" class="flex-center">
-                <el-input type="password" v-model="loginForm.pass" placeholder="숫자/영문/특수문자 포함 6 ~ 20자리" autocomplete="off" />
+                <el-input type="password" v-model="registerForm.pass" placeholder="숫자/영문/특수문자 포함 6 ~ 20자리" autocomplete="off" />
+            </el-form-item>
+            <el-form-item v-if="groupId === 1338" label="관리자 코드" prop="code" class="flex-center">
+                <el-input type="code" v-model="registerForm.code" placeholder="관리자 코드 입력" autocomplete="off" />
             </el-form-item>
             <el-form-item>
                 <div class="flex-center space-between">
-                    <!--                <el-button class="w45p" @click="resetForm('loginForm')">다시 입력 할게요</el-button>-->
-                    <el-button class="w45p" @click="resetForm('loginForm')">다시 입력 할게요</el-button>
-                    <el-button type="primary" class="w45p" @click="submitForm('loginForm')">회원가입</el-button>
+                    <!--                <el-button class="w45p" @click="resetForm('registerForm')">다시 입력 할게요</el-button>-->
+                    <el-button class="w45p" @click="resetForm('registerForm')">다시 입력 할게요</el-button>
+                    <el-button type="primary" class="w45p" @click="submitForm('registerForm')">회원가입</el-button>
                 </div>
             </el-form-item>
         </el-form>
@@ -24,10 +27,16 @@
 <script>
 export default {
     name: "RegisterComponent",
+    props: {
+        groupId: {
+            type: Number,
+            default: 0,
+        },
+    },
     data() {
         let validateUsername = (rule, value, callback) => {
             if (value === '') {
-                callback(new Error('이름을 적어주세요.'));
+                callback(new Error('이름을 입력해주세요.'));
             } else {
                 if (value.length < 2) {
                     callback(new Error('이름은 2자 이상이어야 합니다.'));
@@ -38,7 +47,7 @@ export default {
                 let reg = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/`]/gim;
                 value = value.trimStart();
                 value = value.trimEnd();
-                this.loginForm.username = value;
+                this.registerForm.username = value;
                 if (reg.test(value)) {
                     callback(new Error('이름에는 특수문자를 사용할 수 없습니다.'));
                 }
@@ -81,12 +90,19 @@ export default {
                 callback();
             }
         };
-
+        let validateCode = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('관리자 코드를 입력해주세요.'));
+            } else {
+                callback();
+            }
+        };
         return {
-            loginForm: {
+            registerForm: {
                 username: '',
                 email: '',
                 pass: '',
+                code: '',
             },
             rules: {
                 username: [
@@ -97,6 +113,9 @@ export default {
                 ],
                 pass: [
                     { validator: validatePass, trigger: 'blur' }
+                ],
+                code: [
+                    { validator: validateCode, trigger: 'blur' }
                 ],
             }
         };
