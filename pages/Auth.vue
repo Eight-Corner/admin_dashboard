@@ -6,14 +6,12 @@
         <div class="b-t">
             <div class="content-wrap center-block p-y-md text-center">
                 <div class="p-a-md">
-                    <div>
+                    <div class="social_btn_wrap">
                         <el-button href="#" class="btn btn-block indigo text-white m-b-sm">
-                            <i class="fa fa-facebook pull-left"></i>
-                            Sign in with Email
+                            <i class="ph-facebook-logo"></i>Sign in with Email
                         </el-button>
                         <el-button href="#" class="btn btn-block red text-white">
-                            <i class="fa fa-google-plus pull-left"></i>
-                            Sign in with Google+
+                            <i class="fa fa-google-plus pull-left"></i>Sign in with Google+
                         </el-button>
                     </div>
                 </div>
