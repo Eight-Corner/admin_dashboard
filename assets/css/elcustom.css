@@ -4,9 +4,55 @@
 
 .el-button:focus, .el-button:hover {
     color: #2C3A5D;
+    border: unset;
 }
 
 .el-button {
-    border-color: #7986cb;
+    border: unset;
+    font-family: "Noto Sans KR", sans-serif !important;
 }
 
+.el-button--primary {
+    background-color: #c5cae9;
+    color: #1a237e;
+}
+.el-button--primary:focus, .el-button--primary:hover {
+    color: #3d5afe;
+    background-color: #ffffff;
+    border: unset;
+}
+
+/* form */
+.el-form-item {
+/*   캡션 높이 수정  */
+    margin-bottom: 30px;
+}
+.el-form-item__content {
+    margin-left: 0 !important;
+    width: 100%;
+}
+.el-form-item__label {
+    text-align: center;
+    float: unset;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Noto Sans KR", sans-serif !important;
+}
+.el-input__inner {
+    font-family: Roboto, sans-serif !important;
+}
+.el-form-item__error {
+    word-break: keep-all;
+    width: 100%;
+    text-align: center;
+}
+
+/* checkbox */
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #01579b;
+    border-color: #01579b;
+}
+.el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #ffffff;
+    font-family: "Noto Sans KR", sans-serif !important;
+}
