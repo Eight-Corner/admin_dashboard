@@ -16,12 +16,9 @@
                     <div class="mt20 mb20 text-sm">
                         <span class="text-white">또는</span>
                     </div>
-                    <AuthLoginComponent />
-                    <NuxtLink to="/auth/forgot">
-                        <div class="sm-text bold grey">비밀번호를 잊으셨습니까?</div>
-                    </NuxtLink>
-                    <div class="sm-text text-white mt20">계정을 소유하고 있지 않습니까?
-                        <NuxtLink to="/auth/register" class="a_link">회원가입</NuxtLink>
+                    <AuthRegisterComponent />
+                    <div class="sm-text text-white mt20">계정을 소유하고 계십니까?
+                        <NuxtLink to="/auth" class="a_link">로그인</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -32,7 +29,7 @@
 
 <script>
 export default {
-    name: "Auth",
+    name: "Register",
 
 }
 </script>
