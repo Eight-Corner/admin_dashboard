@@ -801,3 +801,6 @@
     font-family: "Noto Sans KR";
 }
 
+.large-text {
+    font-size: 1.4rem;
+}
