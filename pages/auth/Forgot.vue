@@ -1,10 +1,6 @@
 <template>
     <div id="auth_page" class="app-page">
 
-        <div id="logo" class="logo-text">
-            ADMIN
-        </div>
-
         <div class="b-t">
             <div class="content-wrap center-block p-y-md text-center">
                 <div class="pt25 pb25 pl10 pr10">
