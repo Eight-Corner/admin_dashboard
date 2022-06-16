@@ -808,3 +808,5 @@
 .lh-1rem {line-height: 1rem;}
 .lh-1-5rem {line-height: 1.5rem;}
 .lh-2rem {line-height: 2rem;}
+
+.word-keep {word-break: keep-all;}

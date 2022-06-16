@@ -7,7 +7,7 @@
 
         <div class="b-t">
             <div class="content-wrap center-block p-y-md text-center">
-                <div class="pt25 pb25">
+                <div class="pt25 pb25 pl10 pr10">
                     <div class="social_btn_wrap mb25">
                         <div class="text-white mb15">SNS 계정으로 간편 로그인하기</div>
                         <el-button href="#" class="btn btn-block red text-white google">
