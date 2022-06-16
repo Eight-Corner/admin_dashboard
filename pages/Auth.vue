@@ -16,7 +16,7 @@
                     </div>
                     <div class="mb20 text-sm b-b b-t pt25">
                         <span class="text-white">또는</span>
-                        <el-tabs v-model="activeName" stretch="true" @tab-click="handleClick">
+                        <el-tabs v-model="activeName" :stretch="true" @tab-click="handleClick">
                             <el-tab-pane label="일반 사용자" name="normal">
                                 <AuthLoginComponent :groupId="1" />
                             </el-tab-pane>

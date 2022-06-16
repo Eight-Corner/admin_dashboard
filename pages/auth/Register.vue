@@ -7,7 +7,7 @@
 
         <div class="b-t">
             <div class="content-wrap center-block p-y-md text-center">
-                <div class="pt25 pb25">
+                <div class="pt25 pb25 pl10 pr10">
                     <div class="social_btn_wrap mb25">
                         <div class="text-white mb15">SNS 계정으로 간편 가입하기 </div>
                         <el-button href="#" class="btn btn-block red text-white google">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="mb20 text-sm b-b b-t pt25">
                         <span class="text-white">또는</span>
-                        <el-tabs v-model="activeName" stretch="true" @tab-click="handleClick">
+                        <el-tabs v-model="activeName" :stretch="true" @tab-click="handleClick">
                             <el-tab-pane label="일반 사용자" name="normal">
                                 <AuthRegisterComponent :groupId="1" />
                             </el-tab-pane>
