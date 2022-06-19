@@ -1,19 +1,25 @@
 <template>
     <div class="app-wrap">
-        <!--    로딩 -->
+        <div class="pos_center">
+            <div class="loader10"></div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'IndexPage',
+    layout: 'default',
+    async asyncData({store, redirect}) {
+    },
     mounted() {
         this.checkAuth();
     },
     methods: {
         checkAuth() {
-            sessionStorage.getItem('token') ? this.$router.push('/') : this.$router.push('/auth')
+            localStorage.getItem('token') ? this.$router.push('/dashboard') : this.$router.push('/auth')
         },
-    },
+    }
 }
 </script>
+
+

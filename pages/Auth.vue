@@ -11,15 +11,9 @@
                     </div>
                     <div class="mb20 text-sm b-b b-t pt25">
                         <span class="text-white">또는</span>
-                        <el-tabs v-model="activeName" :stretch="true" @tab-click="handleClick">
-                            <el-tab-pane label="일반 사용자" name="normal">
-                                <AuthLoginComponent :groupId="1" />
-                            </el-tab-pane>
-                            <el-tab-pane label="관리자" name="admin">
-                                <AuthLoginComponent :groupId="1338" />
-                            </el-tab-pane>
-
-                        </el-tabs>
+                        <div class="mt25">
+                            <AuthLoginComponent/>
+                        </div>
                     </div>
                     <NuxtLink to="/auth/forgot">
                         <div class="sm-text bold grey">비밀번호를 잊으셨습니까?</div>
@@ -40,14 +34,9 @@ export default {
     layouts: ['FooterLayout'],
     data() {
         return {
-            activeName: 'normal', // default Normal, type : normal || admin
-            groupId: 1, // default: 1 normal || 1338 admin
         };
     },
     methods: {
-        handleClick(tab, event) {
-
-        },
     },
 
 }

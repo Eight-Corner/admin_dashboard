@@ -91,13 +91,13 @@ export default {
                 if (valid) {
                     alert('로그인 되었습니다.');
                     if (this.groupId === this.$group.admin) {
-                        sessionStorage.setItem('groupId', this.groupId);
-                        sessionStorage.setItem('token', JSON.stringify(this.loginForm.email));
+                        localStorage.setItem('groupId', this.groupId);
+                        localStorage.setItem('token', JSON.stringify(this.loginForm.email));
                     } else {
-                        sessionStorage.setItem('groupId', this.groupId);
-                        sessionStorage.setItem('token', JSON.stringify(this.loginForm.email));
+                        localStorage.setItem('groupId', this.groupId);
+                        localStorage.setItem('token', JSON.stringify(this.loginForm.email));
                     }
-                    this.$router.push('/');
+                    this.$router.push('/dashboard');
                 } else {
                     console.log('error submit!!');
                     return false;

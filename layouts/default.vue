@@ -1,14 +1,22 @@
 <template>
     <div id="app">
-        <Header />
-        <Nuxt />
-        <Footer />
+        <UiGnb />
+            <Nuxt/>
+        <UiFooter/>
     </div>
 </template>
 
 <script>
 export default {
-    name: "default"
+    name: "default",
+    data() {
+        return {
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    },
 }
 </script>
 
