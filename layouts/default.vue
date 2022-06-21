@@ -1,6 +1,6 @@
 <template>
-    <div id="app">
-        <UiGnb />
+    <div id="app" class="theme_bg">
+        <UiAdminGnb />
             <Nuxt/>
         <UiFooter/>
     </div>

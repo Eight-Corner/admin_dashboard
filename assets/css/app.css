@@ -7,11 +7,16 @@
     /*width: 100%;*/
     text-align: center;
     margin: 0 auto;
-    background-color: #14274AE5;
-
     /* footer 영역 확장 */
     padding-bottom: 61px;
 
+/*    LnB GnB Footer */
+    position: relative;
+
+}
+
+.theme_bg {
+    background-color: #14274AE5;
 }
 
 
@@ -34,6 +39,16 @@ button {
 
 }
 
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.el-aside {
+    height: calc(100vh - 61px);
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -46,3 +61,10 @@ button {
     font-size: 14px;
     font-family: 'Roboto', sans-serif !important;
 }
+
+/*
+
+
+
+
+*/
