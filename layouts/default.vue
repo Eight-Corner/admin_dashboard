@@ -14,9 +14,13 @@ export default {
         }
     },
     mounted() {
+        this.checkAuth();
     },
     methods: {
-    },
+        checkAuth() {
+            localStorage.getItem('token') ? this.$router.push('/dashboard') : this.$router.push('/auth')
+        },
+    }
 }
 </script>
 
