@@ -770,6 +770,11 @@
     align-content: center;
     align-items: center;
 }
+.side-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .in-flex-center {
     display: inline-flex;
     justify-content: center;
