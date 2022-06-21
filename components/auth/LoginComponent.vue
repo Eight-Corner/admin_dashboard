@@ -2,10 +2,12 @@
 <div>
     <el-form :model="loginForm" status-icon :rules="rules" ref="loginForm" label-width="120px" class="">
         <el-form-item label="이메일" prop="email" class="flex-center">
-            <el-input type="email" v-model="loginForm.email" placeholder="admin@admin.com" autocomplete="off"></el-input>
+            <el-input type="email" v-model="loginForm.email" @keyup.enter.native="submitForm('loginForm')"
+                      placeholder="admin@admin.com" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="비밀번호" prop="pass" class="flex-center">
-            <el-input type="password" v-model="loginForm.pass" placeholder="숫자/영문/특수문자 포함 6 ~ 20자리" autocomplete="off"></el-input>
+            <el-input type="password" v-model="loginForm.pass" @keyup.enter.native="submitForm('loginForm')"
+                      placeholder="숫자/영문/특수문자 포함 6 ~ 20자리" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item prop="keepAlive">
             <el-checkbox-group v-model="loginForm.keepAlive">
@@ -26,6 +28,12 @@
 <script>
 export default {
     name: "LoginComponent",
+    props: {
+        groupId: {
+            type: Number,
+            default: 0,
+        },
+    },
     data() {
         let validateEmail = (rule, value, callback) => {
             if (value === '') {
@@ -81,7 +89,15 @@ export default {
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    alert('submit!');
+                    alert('로그인 되었습니다.');
+                    if (this.groupId === this.$group.admin) {
+                        localStorage.setItem('groupId', this.groupId);
+                        localStorage.setItem('token', JSON.stringify(this.loginForm.email));
+                    } else {
+                        localStorage.setItem('groupId', this.groupId);
+                        localStorage.setItem('token', JSON.stringify(this.loginForm.email));
+                    }
+                    this.$router.push('/dashboard');
                 } else {
                     console.log('error submit!!');
                     return false;
